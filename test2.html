@@ -1,0 +1,74 @@
+<script>
+
+// class Person {
+//     constructor(name, age, location) {
+//         this.name = name;
+//         this.age = age;
+//         this.location = location;
+//     }
+//     sayHello(){
+//         console.log('Hello ' + this.name);
+//     }
+//     saysomethingaboutmyage() {
+//         if (this.age > 25) {
+//             console.log('Esti batran');
+//         } else {
+//             console.log(this.name + 'esti ok');
+//         }
+//     }
+// }
+
+// const alex = new Person("Alex", 27, "Baia Mare");
+// const vlad = new Person("Vlad", 16, "Suceava");
+// alex.saysomethingaboutmyage();
+// alex.sayHello();
+
+// console.log(alex, vlad);
+
+class Triunghi {
+    constructor(latura1, latura2, latura3){
+        this.latura1 = latura1;
+        this.latura2 = latura2;
+        this.latura3 = latura3;
+    }
+
+    calcPerimetru(){
+        return this.latura1 + this.latura2 + this.latura3;
+    }
+}
+
+class TriunghiEchilateral extends Triunghi {
+    constructor(latura){
+        this.latura = latura;
+        super(latura, latura, latura);
+
+    }
+    arie() {
+        return (this.latura ** 2 * Math.sqrt(3)) / 4
+    }
+    arieRotunjita(){
+        return Math.round(this.arie());
+    }
+}
+
+class TriunghiIsoscel extends Triunghi {
+    constructor(latura1, latura2, latura3){
+        super(latura1, latura2, latura3);
+        if (latura1 === latura2 || latura2 === latura3 || latura1 === latura3){
+            console.log('triunghiul este isoscel');
+        } else { //console.log('Triunghiul nu este isoscel')};
+                throw new Error('triunghiul nu este isoscel');
+    }
+}
+
+
+// const triunghi = new Triunghi (2, 5, 4);
+
+// console.log(triunghi1.calcPerimetru());
+
+// const triunghiEchilateral = new TriunghiEchilateral(3);
+// console.log(triunghiEchilateral.calcPerimetru())
+
+const triunghiIsoscel = new TriunghiIsoscel(2, 5, 2)
+
+</script>

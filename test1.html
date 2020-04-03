@@ -15,13 +15,65 @@
 
 // var, let, const
 
-var tabel = ["Audi", "Ford", "Fiat", "Dacia"]
+var tabel = ["Audi", "Ford", "Fiat", "Dacia"];
 
-for(var cheie = 0; cheie<=3; cheie++){
-    console.log('afisez marca de la pozitia ' + cheie + ': ' + tabel[cheie]);
+// for(var cheie = 0; cheie<=3; cheie++){
+//     console.log('afisez marca de la pozitia ' + cheie + ': ' + tabel[cheie]);
+// }
+
+
+let obiect = {
+    'marca': 'Audi', 
+    "model": "RS",
+    'year': '2015',
+    'mileage': '200000',
+    'color': 'red'};
+
+console.log(obiect.color);
+
+let randomNumber = Math.floor(Math.random()*11);
+let secretNumber = Math.floor(Math.random()*11);
+
+console.log('Random number e ' + randomNumber);
+console.log('Secret number e ' + secretNumber);
+
+while (secretNumber !== randomNumber){
+    console.log('Am incercat numarul' + randomNumber);
+    randomNumber = Math.floor(Math.random()*11);
 }
 
-console.log("da, da!);
+
+___
+
+let x=1;
+let y=2;
+
+console.log('Inainte, x are valoare ' + x + 'iar y are valoare' + y);
+
+function produs(x, y){
+    console.log('In interior, x are valoare ' + x + 'iar y are valoare' + y);
+    return x*y;
+}
+
+produs(225, 55);
+
+console.log('Dupa definirea functiei, x are valoare ' + x + 'iar y are valoare' + y);
+
+___
+
+class Car{
+    constructor(marca){
+        this.make = marca;
+}
+    setTransmition(){
+        this.transmision = 'Manual';
+    }
+        
+}
+
+let masinaMea = new Car('Peugeot');
+masinaMea.setTransmision();
+console.log(masinaMea);
 
 </script>
 
